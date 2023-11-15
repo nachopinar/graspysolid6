@@ -68,28 +68,33 @@ namespace Full_GRASP_And_SOLID
         }
 
 
-        public int GetCookTime();
+        public int GetCookTime()
+        {
+            return 0;
+        }
 
         // public void Cook()
         // {
         //     this.Cooked = true;
         // }
-    }
     
-    public class RecipeaAdapter : TimerClient
-    {
-        public RecipeaAdapter(Recipe recipe)
+    
+        public class RecipeAdapter : TimerClient // Corregido el nombre de la clase
         {
-            this.Recipe = recipe;
+            private Recipe recipe; // Corregido el nombre de la variable
+
+            public RecipeAdapter(Recipe recipe)
+            {
+                this.recipe = recipe;
+            }
+
+            public void TimeOut()
+            {
+                this.recipe.Cooked = true;
+            }
         }
-    
-         public void TimeOut()
-         {
-            this.recipe.Cooked = true;
-         }
     }
 }
-
 
 /*
 Register(tiempo, client)
