@@ -76,3 +76,27 @@ namespace Full_GRASP_And_SOLID
         }
     }
 }
+
+
+/*
+Register(tiempo, client)
+
+client -> timeout
+tiempo -> tiempo receta
+
+como no podemos modificar Recipe podemos crear otra clase.
+Esa clase RecipeAdapter : TimerClient
+
+    public RecipeaAdapter(Recipe recipe)
+    {
+        this.recipe = recipe;
+    }
+    public void TimeOut()
+    {
+        this.recipe.TimeOut = true;
+    }
+
+podemos meter esta clase adentro de Recipe.
+
+
+*/
