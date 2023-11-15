@@ -18,7 +18,7 @@ namespace Full_GRASP_And_SOLID
 
         // Agregado por Creator
 
-        private bool Cooked {get;set;} = false;
+        public bool Cooked {get; private set;} = false;
 
 
         public void AddStep(Product input, double quantity, Equipment equipment, int time)
@@ -70,10 +70,23 @@ namespace Full_GRASP_And_SOLID
 
         public int GetCookTime();
 
-        public void Cook()
+        // public void Cook()
+        // {
+        //     this.Cooked = true;
+        // }
+    }
+    
+    public class RecipeaAdapter : TimerClient
+    {
+        public RecipeaAdapter(Recipe recipe)
         {
-            this.Cooked = true;
+            this.Recipe = recipe;
         }
+    
+         public void TimeOut()
+         {
+            this.recipe.Cooked = true;
+         }
     }
 }
 
